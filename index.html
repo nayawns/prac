@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024-04-23 미팅 일정</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  th {
+    background-color: #ff0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  th:first-child {
+    left: 0;
+    z-index: 2;
+  }
+  .copyable {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1 style="text-align: center;">2024-04-23 미팅 일정</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 5%;">No.</th>
+      <th style="width: 10%;">시간</th>
+      <th style="width: 15%;">업체명</th>
+      <th style="width: 10%;">성함</th>
+      <th style="width: 10%;">직함</th>
+      <th style="width: 15%;">연락처</th>
+      <th style="width: 20%;">주소</th>
+      <th style="width: 5%;">담당자</th>
+      <th style="width: 5%;">담당자</th>
+      <th style="width: 5%;">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>10:00</td>
+      <td><a href="https://www.example.com" target="_blank">세진엠에스</a></td>
+      <td>송선복</td>
+      <td>차장</td>
+      <td class="copyable" data-value="010-7380-8724">010-7380-8724</td>
+      <td class="copyable" data-value="경기도 남양주시 진건읍 진관산단로 54번길 2">경기도 남양주시 진건읍 진관산단로 54번길 2</td>
+      <td>이종호</td>
+      <td></td>
+      <td>타발기 장비 제작 업체</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>14:00</td>
+      <td><a href="https://www.example.com" target="_blank">뉴케어</a></td>
+      <td>박길순</td>
+      <td>기술이사</td>
+      <td class="copyable" data-value="010-2603-7683">010-2603-7683</td>
+      <td class="copyable" data-value="충청북도 청주시 흥덕구 오송읍 의료단지길 41">충청북도 청주시 흥덕구 오송읍 의료단지길 41</td>
+      <td>신승만</td>
+      <td>김민준</td>
+      <td>핵의학과 방사선 계측기 개발 제조 업체</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>16:00</td>
+      <td><a href="https://www.example.com" target="_blank">(주)모션시스템</a></td>
+      <td>김민식</td>
+      <td>대표이사</td>
+      <td class="copyable" data-value="010-6356-4320">010-6356-4320</td>
+      <td class="copyable" data-value="충청북도 청주시 청원구 오창읍 모정2길 12-23">충청북도 청주시 청원구 오창읍 모정2길 12-23</td>
+      <td>신승만</td>
+      <td>김민준</td>
+      <td>산업용 로봇 제조업체</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  document.querySelectorAll('.copyable').forEach(item => {
+    item.addEventListener('click', event => {
+      const value = item.getAttribute('data-value');
+      navigator.clipboard.writeText(value);
+      alert('클립보드에 복사되었습니다: ' + value);
+    });
+  });
+</script>
+
+</body>
+</html>
